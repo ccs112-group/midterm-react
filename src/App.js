@@ -1,7 +1,8 @@
 // App.js
 import React, { useState } from 'react';
-import ProductPages from './ProductPages';
-import CartSummary from './CartSummary'; // Import the CartSummary component
+import ProductPages from './component/ProductPages';
+import CartSummary from './component/CartSummary';
+import './App.css';
 
 const products = [
   { id: 1, name: "CPU", description: "Central processing unit (CPU) for processing computations and running programs.", price: 5000 },
@@ -14,8 +15,6 @@ const products = [
   { id: 8, name: "Keyboard", description: "Keyboard is an input device used for typing text and issuing commands to the computer.", price: 1500 },
   { id: 9, name: "Mouse", description: "Mouse is an input device used for navigating graphical user interfaces and interacting with on-screen elements.", price: 1000 },
   { id: 10, name: "Cooling System", description: "Cooling system keeps the components of a computer within safe temperature limits to prevent overheating and damage.", price: 3500 }
-
-  // Add more products here
 ];
 
 function App() {
@@ -23,21 +22,28 @@ function App() {
 
   const addToCart = (productId) => {
     const productToAdd = products.find(product => product.id === productId);
-    setCart([...cart, productToAdd]);
+    const existingProductIndex = cart.findIndex(item => item.id === productId);
+
+    if (existingProductIndex !== -1) {
+      const updatedCart = [...cart];
+      updatedCart[existingProductIndex].quantity++;
+      setCart(updatedCart);
+    } else {
+      setCart([...cart, { ...productToAdd, quantity: 1 }]);
+    }
   };
 
   return (
     <div className="App">
       <header className="App-header">
-        <h1>Product Pages</h1>
+        <div style={{ backgroundColor: 'lightblue', textAlign: 'center', padding: '20px', margin: '20px'}}>
+          <h1 style={{ fontSize: '60px' }}>COMPUTER PARTS</h1>
+        </div>
         <ProductPages products={products} addToCart={addToCart} />
-        <CartSummary cart={cart} /> {/* Render the CartSummary component */}
+        <CartSummary cart={cart} />
       </header>
-      <script>console.log("Hello World")</script>
     </div>
   );
 }
 
 export default App;
-
-
