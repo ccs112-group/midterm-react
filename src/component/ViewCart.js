@@ -7,11 +7,11 @@ const ViewCart = ({ cart, removeFromCart }) => {
     
 
   return (
-    <div >
-      <div>
-        <div >
-          <div >
-            <h2 >My Cart</h2>
+    <div className="container">
+      <div className="row justify-content-center">
+        <div className="col-md-8">
+          <div className="card">
+            <h2 className="card-header">My Cart</h2>
             <ul >
 
 
@@ -22,14 +22,14 @@ const ViewCart = ({ cart, removeFromCart }) => {
 
               
             </ul>
-            <div>
-              <p>Total Price: ₱{totalPrice.toFixed(2)}</p>
-              <p >Total Quantity: {totalQuantity}</p>
+            <div className="card-footer">
+              <p className="card-text">Total Price: ₱{totalPrice.toFixed(2)}</p>
+              <p className="card-text">Total Quantity: {totalQuantity}</p>
             </div>
             {/* Add button to go back to the shop */}
-            <div >
+            <div className="card-footer">
               <Link to="/products">
-                <button >Back to Shop</button>
+                <button className="btn btn-primary">Back to Shop</button>
               </Link>
             </div>
           </div>
