@@ -1,8 +1,6 @@
+// App.js
 import React, { useState } from 'react';
-import { BrowserRouter as Router, Routes, Route, Link, useNavigate } from 'react-router-dom';
-
 import ProductPages from './component/ProductPages';
-import ViewCart from './component/ViewCart';
 import './App.css';
 
 const products = [
@@ -34,52 +32,16 @@ function App() {
     }
   };
 
-  const removeFromCart = (productId) => {
-    const updatedCart = cart.filter(item => item.id !== productId);
-    setCart(updatedCart);
-  };
-
   return (
-    <Router>
-      <div className="App">
-        <header className="App-header">
-          <div className='logo-container'>
-            <label className='logo'>SOLIDD <span>PARTS</span></label>
-          </div>
-        
-          <Routes>
-            <Route path="/products" element={<ProductPages products={products} addToCart={addToCart} />} />
-            <Route path="/cart" element={<ViewCart cart={cart} removeFromCart={removeFromCart} />} />
-            <Route path="/" element={<Home />} />
-          </Routes>
-        </header>
-      </div>
-    </Router>
-  );
-}
-  
-function Home() {
-  const navigate = useNavigate();
-
-  return (
-    <div>
-      <div className='img-container'>
-        <img 
-          className='presentation-img'
-          src='https://www.pcworld.com/wp-content/uploads/2023/04/170529-taipei-7-100724095-orig.jpg?quality=50&strip=all' 
-          alt='Home'
-        />
-      </div>
-      <div className='home-body'>
-        <div className='home-content'>
-          <label>Start shopping online today<br/>with <span>SOLIDD</span></label>
-          <button className='shop-btn' onClick={() => { navigate('/products') } }>
-            Proceed to Shopping
-          </button>
+    <div className="App">
+      <header className="App-header">
+        <div style={{ backgroundColor: 'lightblue', textAlign: 'center', padding: '20px', margin: '20px'}}>
+          <h1 style={{ fontSize: '60px' }}>COMPUTER PARTS</h1>
         </div>
-      </div>
+        <ProductPages products={products} addToCart={addToCart} />
+        <CartSummary cart={cart} />
+      </header>
     </div>
-
   );
 }
 
