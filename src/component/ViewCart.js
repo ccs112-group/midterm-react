@@ -29,9 +29,9 @@ const ViewCart = ({ cart, removeFromCart }) => {
               <p className="card-text">Total Quantity: {totalQuantity}</p>
             </div>
             {/* Add button to go back to the shop */}
-            <div >
+            <div className="card-footer">
               <Link to="/products">
-                <button >Back to Shop</button>
+                <button className="btn btn-primary">Back to Shop</button>
               </Link>
             </div>
           </div>
