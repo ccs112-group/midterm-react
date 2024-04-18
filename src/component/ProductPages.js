@@ -15,10 +15,10 @@ const ProductPages = ({ products, addToCart }) => {
 
 
 
-      <div>
-        <div > 
+      <div className="container">
+        <div className="row"> 
           {products.map(product => (
-            <div  key={product.id}>
+            <div className="col-md-4" key={product.id}>
               <Product
                 id={product.id}
                 name={product.name}
