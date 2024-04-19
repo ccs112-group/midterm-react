@@ -4,9 +4,6 @@ import { Link } from 'react-router-dom';
 const ViewCart = ({ cart, removeFromCart }) => {
   const totalPrice = cart.reduce((total, product) => total + product.price * product.quantity, 0);
   const totalQuantity = cart.reduce((total, product) => total + product.quantity, 0);
-  
-
-    
 
   return (
     <div className="container">
@@ -16,13 +13,13 @@ const ViewCart = ({ cart, removeFromCart }) => {
             <h2 className="card-header">My Cart</h2>
             <ul >
               {cart.map(item => (
-                <li key={item.id}>
-                  <div >
+                <li key={item.id} className="list-group-item d-flex flex-column align-items-start">
+                  <div className="d-flex justify-content-between align-items-center w-100">
                     <span>{item.name}</span>
-                    <button onClick={() => removeFromCart(item.id)}>Remove</button>
+                    <button className="btn btn-danger" onClick={() => removeFromCart(item.id)}>Remove</button>
                   </div>
-                  <span >Quantity: {item.quantity}</span>
-                  <span >Price: ₱{item.price.toFixed(2)}</span>
+                  <span className="badge bg-primary rounded-pill mt-2">Quantity: {item.quantity}</span>
+                  <span className="badge bg-secondary mt-2">Price: ₱{item.price.toFixed(2)}</span>
                 </li>
               ))}
             </ul>
