@@ -9,12 +9,17 @@ const ProductPages = ({ products, addToCart }) => {
   return (
     
   <div>
-
-
-
-
-
-
+      <div style={{ marginTop: '20px', textAlign: 'center' }}>
+          <button onClick={() => { navigate('/cart') }}>
+        My Cart
+          </button>
+      </div>
+      {/* Add the "My Cart" button outside the product cards */}
+      <div style={{ marginTop: '20px', textAlign: 'center' }}>
+      <button onClick={() => { navigate('/') }}>
+       Home
+          </button>
+      </div>
       <div className="container">
         <div className="row"> 
           {products.map(product => (

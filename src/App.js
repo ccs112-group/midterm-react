@@ -34,10 +34,10 @@ function App() {
     }
   };
 
-
-  
- 
-
+  const removeFromCart = (productId) => {
+    const updatedCart = cart.filter(item => item.id !== productId);
+    setCart(updatedCart);
+  };
 
   return (
     <Router>
