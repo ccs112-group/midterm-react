@@ -74,7 +74,7 @@ function Home() {
       <div className='home-body'>
         <div className='home-content'>
           <label>Start shopping online today<br/>with <span>SOLIDD</span></label>
-          <button className='shop-btn' onClick={() => { navigate('/products') } }>
+          <button className='shop-btn btn btn-primary'  onClick={() => { navigate('/products') } }>
             Proceed to Shopping
           </button>
         </div>

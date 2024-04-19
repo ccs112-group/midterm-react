@@ -10,13 +10,13 @@ const ProductPages = ({ products, addToCart }) => {
     
   <div>
       <div style={{ marginTop: '20px', textAlign: 'center' }}>
-          <button onClick={() => { navigate('/cart') }}>
+          <button className="btn btn-primary" onClick={() => { navigate('/cart') }}>
         My Cart
           </button>
       </div>
       {/* Add the "My Cart" button outside the product cards */}
       <div style={{ marginTop: '20px', textAlign: 'center' }}>
-      <button onClick={() => { navigate('/') }}>
+      <button className="btn btn-primary" onClick={() => { navigate('/') }}>
        Home
           </button>
       </div>
