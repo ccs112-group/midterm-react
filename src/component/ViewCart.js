@@ -2,6 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const ViewCart = ({ cart, removeFromCart }) => {
+  const totalPrice = cart.reduce((total, product) => total + product.price * product.quantity, 0);
+  const totalQuantity = cart.reduce((total, product) => total + product.quantity, 0);
   
 
     
@@ -13,14 +15,16 @@ const ViewCart = ({ cart, removeFromCart }) => {
           <div className="card">
             <h2 className="card-header">My Cart</h2>
             <ul >
-
-
-
-
-
-
-
-              
+              {cart.map(item => (
+                <li key={item.id}>
+                  <div >
+                    <span>{item.name}</span>
+                    <button onClick={() => removeFromCart(item.id)}>Remove</button>
+                  </div>
+                  <span >Quantity: {item.quantity}</span>
+                  <span >Price: â‚±{item.price.toFixed(2)}</span>
+                </li>
+              ))}
             </ul>
             <div className="card-footer">
               <p className="card-text">Total Price: ₱{totalPrice.toFixed(2)}</p>
