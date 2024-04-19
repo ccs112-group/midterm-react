@@ -8,6 +8,7 @@ const ProductPages = ({ products, addToCart }) => {
   const navigate = useNavigate ();
   return (
     
+<<<<<<< HEAD
   <div>
       <div style={{ marginTop: '20px', textAlign: 'center' }}>
           <button onClick={() => { navigate('/cart') }}>
@@ -20,6 +21,15 @@ const ProductPages = ({ products, addToCart }) => {
        Home
           </button>
       </div>
+=======
+  
+
+
+
+
+
+
+>>>>>>> parent of a9067f3 (Update ProductPages.js)
       <div className="container">
         <div className="row"> 
           {products.map(product => (
