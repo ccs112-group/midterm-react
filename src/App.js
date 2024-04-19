@@ -40,6 +40,21 @@ function App() {
   };
 
   return (
+    <Router>
+    <div className="App">
+      <header className="App-header">
+        <div style={{ backgroundColor: 'lightblue', textAlign: 'center', padding: '20px', margin: '20px'}}>
+          <h1 style={{ fontSize: '60px' }}>COMPUTER PARTS</h1>
+        </div>
+      
+        <Routes>
+          <Route path="/products" element={<ProductPages products={products} addToCart={addToCart} />} />
+          <Route path="/cart" element={<ViewCart cart={cart} removeFromCart={removeFromCart} />} />
+          <Route path="/" element={<Home />} />
+        </Routes>
+      </header>
+    </div>
+  </Router>
 
   );
 }
