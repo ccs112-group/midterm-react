@@ -8,7 +8,7 @@ const ProductPages = ({ products, addToCart }) => {
   const navigate = useNavigate ();
   return (
     
-  
+  <div>
 
 
 
