@@ -42,9 +42,9 @@ function App() {
   return (
     <Router>
     <div className="App">
-      <header className="App-header">
-        <div style={{ backgroundColor: 'lightblue', textAlign: 'center', padding: '20px', margin: '20px'}}>
-          <h1 style={{ fontSize: '60px' }}>COMPUTER PARTS</h1>
+      <header>
+        <div className='logo-container'>
+          <label className='logo'>SOLIDD <span>PARTS</span></label>
         </div>
       
         <Routes>

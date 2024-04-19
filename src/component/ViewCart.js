@@ -22,7 +22,7 @@ const ViewCart = ({ cart, removeFromCart }) => {
                     <button onClick={() => removeFromCart(item.id)}>Remove</button>
                   </div>
                   <span >Quantity: {item.quantity}</span>
-                  <span >Price: â‚±{item.price.toFixed(2)}</span>
+                  <span >Price: ₱{item.price.toFixed(2)}</span>
                 </li>
               ))}
             </ul>
